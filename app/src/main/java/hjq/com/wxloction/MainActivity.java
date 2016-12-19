@@ -8,11 +8,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.drew.imaging.ImageMetadataReader;
-import com.drew.imaging.ImageProcessingException;
-import com.drew.metadata.Metadata;
 
-import java.io.File;
+import net.sourceforge.jheader.App1Header;
+import net.sourceforge.jheader.JpegFormatException;
+import net.sourceforge.jheader.JpegHeaders;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -55,15 +55,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             .load(tmpAvatarLocalPath)
                             .into(iv);
 
-                    File file = new File(tmpAvatarLocalPath);
-                    try {
-                        Metadata metadata = ImageMetadataReader.readMetadata(file);
+                    /*try {
+                        ExifInterface exifInterface = new ExifInterface(tmpAvatarLocalPath);
+                        //经度
+                        exifInterface.setAttribute(ExifInterface.TAG_GPS_LONGITUDE,"139");
+                        //经度参考
+                        exifInterface.setAttribute(ExifInterface.TAG_GPS_LONGITUDE_REF,"E");
+                        //纬度
+                        exifInterface.setAttribute(ExifInterface.TAG_GPS_LATITUDE,"35");
+                        //纬度参考
+                        exifInterface.setAttribute(ExifInterface.TAG_GPS_LATITUDE_REF,"N");
+                        exifInterface.setAttribute(ExifInterface.TAG_GPS_ALTITUDE_REF,"海平面");
+                        exifInterface.setAttribute(ExifInterface.TAG_GPS_ALTITUDE,"10");
+                        exifInterface.setAttribute(ExifInterface.TAG_GPS_IMG_DIRECTION_REF,"真方位");
+                        exifInterface.setAttribute(ExifInterface.TAG_GPS_IMG_DIRECTION,"0");
+                        exifInterface.saveAttributes();
 
-                    } catch (ImageProcessingException e) {
-                        e.printStackTrace();
+                        String la = exifInterface.getAttribute(ExifInterface.TAG_GPS_LATITUDE);
+                        String lo = exifInterface.getAttribute(ExifInterface.TAG_GPS_LONGITUDE);
+                        Log.e("------>",la+"--"+lo);
                     } catch (IOException e) {
                         e.printStackTrace();
+                    }*/
+
+                    try {
+                        JpegHeaders jpegHeaders = new JpegHeaders(tmpAvatarLocalPath);
+                        jpegHeaders.convertToExif();
+                        App1Header app1Header = jpegHeaders.getApp1Header();
+                        app1Header.setValue(App1Header.Tag.GPSINFO,"100");
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (JpegFormatException e) {
+                        e.printStackTrace();
                     }
+
 
                 }
             }
