@@ -1,4 +1,4 @@
-package hjq.com.wxloction;
+package com.youqu.piclbs;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
