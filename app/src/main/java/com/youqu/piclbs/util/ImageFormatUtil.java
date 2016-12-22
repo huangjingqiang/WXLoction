@@ -1,4 +1,4 @@
-package com.youqu.piclbs;
+package com.youqu.piclbs.util;
 
 import android.app.Activity;
 import android.content.Context;

@@ -19,4 +19,7 @@
     <string name="tab_hot">热门标签</string>
     <string name="tab_loction">位置标签</string>
     <string name="tab_map">地图标签</string>
+    
+    <string name="classify_build">地标建筑</string>
+    <string name="classify_history">名胜古迹</string>
 </resources>

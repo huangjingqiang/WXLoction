@@ -4,58 +4,69 @@ import android.content.Intent;
 import android.location.Location;
 import android.media.ExifInterface;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.youqu.piclbs.tencent.fence.DemoGeofenceEditorActivty;
+import com.youqu.piclbs.hot.HotFragment;
+import com.youqu.piclbs.location.LocationFragment;
+import com.youqu.piclbs.map.MapFragment;
+import com.youqu.piclbs.util.ImageFormatUtil;
+import com.youqu.piclbs.util.MainFragmentAdapter;
+import com.youqu.piclbs.util.SlidingTabLayout;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import me.nereo.multi_image_selector.MultiImageSelector;
 import me.nereo.multi_image_selector.MultiImageSelectorActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private ImageView iv;
-    private Button tv;
+    @BindView(R.id.main_viewpager)
+    ViewPager viewPager;
     private final int REQUEST_IMAGE = 0x111;
-    private Button dtu;
+    @BindView(R.id.slidingTabLayout)
+    SlidingTabLayout slidingTabLayout;
+    private List<String> titles = new ArrayList<>();
+    private List<Fragment> fragments = new ArrayList<>();
+    private MainFragmentAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
-        iv = (ImageView) this.findViewById(R.id.main_iv);
-        tv = (Button) this.findViewById(R.id.main_tv);
-        dtu = (Button) this.findViewById(R.id.ditu);
+        initView();
+    }
 
-        tv.setOnClickListener(this);
-        dtu.setOnClickListener(this);
+    private void initView() {
+        titles.add("热门地点");
+        titles.add("位置标签");
+        titles.add("位置选择");
+
+        fragments.add(new HotFragment());
+        fragments.add(new LocationFragment());
+        fragments.add(new MapFragment());
+
+        adapter = new MainFragmentAdapter(getSupportFragmentManager(), fragments, titles);
+        viewPager.setAdapter(adapter);
+        slidingTabLayout.setViewPager(viewPager);
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.ditu:
-                Intent intent = new Intent(this, DemoGeofenceEditorActivty.class);
-                startActivity(intent);
-                break;
-            case R.id.main_tv:
-                MultiImageSelector.create()
-                        .showCamera(false)
-                        .single()
-                        .start(MainActivity.this, REQUEST_IMAGE);
-                break;
-        }
-
-
+        MultiImageSelector.create()
+                .showCamera(false)
+                .single()
+                .start(MainActivity.this, REQUEST_IMAGE);
     }
 
     private String gpsInfoConvert(double gpsInfo) {
@@ -108,9 +119,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 List<String> path = data.getStringArrayListExtra(MultiImageSelectorActivity.EXTRA_RESULT);
                 if (path != null && path.size() > 0) {
                     final String tmpAvatarLocalPath = path.get(0);
-                    Glide.with(this)
-                            .load(tmpAvatarLocalPath)
-                            .into(iv);
+
+
                     try {
                         ExifInterface exifInterface = new ExifInterface(tmpAvatarLocalPath);
                         Log.e("-------1>", exifInterface.getAttribute(ExifInterface.TAG_GPS_LATITUDE) + "");

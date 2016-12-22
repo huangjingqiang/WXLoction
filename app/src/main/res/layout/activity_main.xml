@@ -3,11 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.youqu.piclbs.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:background="#0000ff"
         android:orientation="horizontal">
 
         <ImageView
@@ -27,33 +30,24 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp" />
 
-        <android.support.v4.view.ViewPager
+        <com.youqu.piclbs.util.SlidingTabLayout
+            android:id="@+id/slidingTabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            app:tl_indicator_height="0dp" />
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/main_iv"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/main_viewpager"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
-
-    <Button
-        android:id="@+id/ditu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="80dp"
-        android:text="地图测试" />
-
-    <Button
-        android:id="@+id/main_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:text="@string/select_image" />
+        android:layout_height="wrap_content"/>
 </RelativeLayout>
