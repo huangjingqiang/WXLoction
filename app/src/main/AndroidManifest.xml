@@ -50,6 +50,9 @@
         <!-- geofence -->
         <activity android:name=".tencent.fence.DemoGeofenceEditorActivty" />
         <activity android:name=".tencent.fence.DemoGeofenceEventActivity" />
+        <activity android:name=".SearchResultActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <receiver android:name=".tencent.fence.DemoGeofenceEventReceiver"
             android:exported="false">
             <intent-filter>

@@ -1,4 +1,58 @@
-[
-  {"title":"四川峨眉山顶","address":"乐山市峨眉山","longitude":"35","latitude":"139"},
-  {"title":"三亚香格里拉大酒店","address":"三亚市海棠区海棠北路88号","longitude":"22","latitude":"100"}
-]
+{
+  "topLocation": [
+    {
+      "name": "四川峨眉山",
+      "location": "中国四川省乐山市峨眉山市",
+      "lat": "29.30",
+      "lng": "103.20",
+      "category": "名胜古迹"
+    },
+    {
+      "name": "四川峨眉山",
+      "location": "中国四川省乐山市峨眉山市",
+      "lat": "29.30",
+      "lng": "103.20",
+      "category": "名胜古迹"
+    }
+  ],
+  "category": [
+    {
+      "category": "名胜古迹",
+      "location": [
+        {
+          "name": "四川峨眉山",
+          "location": "中国四川省乐山市峨眉山市",
+          "lat": "29.30",
+          "lng": "103.20",
+          "category": "名胜古迹"
+        },
+        {
+          "name": "四川峨眉山",
+          "location": "中国四川省乐山市峨眉山市",
+          "lat": "29.30",
+          "lng": "103.20",
+          "category": "名胜古迹"
+        }
+      ]
+    },
+    {
+      "category": "名胜古迹",
+      "location": [
+        {
+          "name": "四川峨眉山xx",
+          "location": "中国四川省乐山市峨眉山市xx",
+          "lat": "29.30",
+          "lng": "103.20",
+          "category": "名胜古迹xx"
+        },
+        {
+          "name": "四川峨眉山xx",
+          "location": "中国四川省乐山市峨眉山市xx",
+          "lat": "29.30",
+          "lng": "103.20",
+          "category": "名胜古迹xx"
+        }
+      ]
+    }
+  ]
+}
