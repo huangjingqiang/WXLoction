@@ -9,36 +9,52 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="#0000ff"
+        android:layout_height="116dp"
+        android:background="@drawable/bg_gradient_blue"
         android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@mipmap/ic_launcher" />
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="48dp"
+            android:orientation="horizontal">
 
-        <include
-            android:id="@+id/main_search"
-            layout="@layout/layout_edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_gravity="center_vertical"
+                android:background="@mipmap/btn_back" />
+
+            <include
+                android:id="@+id/main_search"
+                layout="@layout/layout_edit"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/ic_about"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"/>
+
+        </LinearLayout>
 
         <com.youqu.piclbs.util.SlidingTabLayout
             android:id="@+id/slidingTabLayout"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="2dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
+            app:tl_textsize="13sp"
+            app:tl_textUnselectColor="@color/color_97b7e4"
+            app:tl_textSelectColor="@color/white"
             app:tl_indicator_height="0dp" />
     </RelativeLayout>
 
@@ -46,7 +62,8 @@
         android:id="@+id/main_viewpager"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="5dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="116dp"
+        android:background="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 </RelativeLayout>

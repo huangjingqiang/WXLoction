@@ -21,4 +21,12 @@
     <string name="tab_map">地图标签</string>
     <string name="cancel">取消</string>
     <string name="ok">确定</string>
+    <string name="clear_search">清空搜索历史</string>
+    <string name="search_history">搜索历史</string>
+    <string name="free_use">体验次数用完啦</string>
+    <string name="free_introduction">下载安装我们开发的另一个好玩的应用
+    可继续使用。就是这么耍流流氓~</string>
+    <string name="ok_go">好的去看看</string>
+    <string name="location_modify">位置修改为</string>
+    <string name="modify_save">修改并保存到相册</string>
 </resources>

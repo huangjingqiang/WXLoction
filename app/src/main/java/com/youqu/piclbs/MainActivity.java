@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.youqu.piclbs.hot.HotFragment;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.slidingTabLayout)
     SlidingTabLayout slidingTabLayout;
     @BindView(R.id.main_search)
-    LinearLayout search;
+    RelativeLayout search;
     private List<String> titles = new ArrayList<>();
     private List<Fragment> fragments = new ArrayList<>();
     private MainFragmentAdapter adapter;

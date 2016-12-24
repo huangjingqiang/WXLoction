@@ -6,7 +6,7 @@
 
     <solid android:color="@color/white"/>
 
-    <stroke android:color="@color/colorAccent"
+    <stroke android:color="#0000ff"
         android:width="1px"/>
 
 </shape>
