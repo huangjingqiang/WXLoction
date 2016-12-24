@@ -14,6 +14,7 @@ public class AddressBean implements Parcelable {
     public String latitude;  //纬度
 
 
+
     @Override
     public String toString() {
         return "AddressBean{" +
