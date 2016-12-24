@@ -266,7 +266,7 @@ public class DemoGeofenceEditorActivty extends Activity implements
 		Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
 	}
 
-	class AddGeofenceOnClickListener implements OnClickListener {
+	public class AddGeofenceOnClickListener implements OnClickListener {
 
 		private View mView;
 

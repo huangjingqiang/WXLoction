@@ -8,6 +8,15 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/location_category"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@color/color_dfdfdf" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/location_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </RelativeLayout>

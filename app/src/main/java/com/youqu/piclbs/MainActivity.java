@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.youqu.piclbs.hot.HotFragment;
@@ -25,6 +26,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import me.nereo.multi_image_selector.MultiImageSelector;
 import me.nereo.multi_image_selector.MultiImageSelectorActivity;
 
@@ -34,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private final int REQUEST_IMAGE = 0x111;
     @BindView(R.id.slidingTabLayout)
     SlidingTabLayout slidingTabLayout;
+    @BindView(R.id.main_search)
+    LinearLayout search;
     private List<String> titles = new ArrayList<>();
     private List<Fragment> fragments = new ArrayList<>();
     private MainFragmentAdapter adapter;
@@ -60,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         viewPager.setAdapter(adapter);
         slidingTabLayout.setViewPager(viewPager);
     }
+
 
     @Override
     public void onClick(View view) {
@@ -138,5 +143,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         }
+    }
+
+    @OnClick(R.id.main_search)
+    public void onClick() {
+        Intent intent = new Intent(MainActivity.this,SearchResultActivity.class);
+        startActivity(intent);
     }
 }

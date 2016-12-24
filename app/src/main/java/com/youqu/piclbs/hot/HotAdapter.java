@@ -19,9 +19,9 @@ import java.util.List;
 
 public class HotAdapter extends RecyclerView.Adapter<HotAdapter.MyViewHolder>{
     private Activity activity;
-    private List<AddressBean> items;
+    private List<AddressBean.TopLocationBean> items;
 
-    public HotAdapter(Activity activity,List<AddressBean> items){
+    public HotAdapter(Activity activity,List<AddressBean.TopLocationBean> items){
         this.activity = activity;
         this.items = items;
     }
@@ -34,10 +34,8 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.MyViewHolder>{
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        Log.e("------2>",items+"");
-        holder.address.setText(items.get(position).address);
-        holder.title.setText(items.get(position).title);
-        Log.e("------->",items.get(position).address);
+        holder.address.setText(items.get(position).location);
+        holder.title.setText(items.get(position).name);
     }
 
     @Override
