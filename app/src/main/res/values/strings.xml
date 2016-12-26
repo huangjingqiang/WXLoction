@@ -29,4 +29,9 @@
     <string name="ok_go">好的去看看</string>
     <string name="location_modify">位置修改为</string>
     <string name="modify_save">修改并保存到相册</string>
+    <string name="select_use">选择一张图片</string>
+    <string name="modify_success">修改成功!</string>
+    <string name="save_pic">已保存到相册</string>
+    <string name="modify_one">再修改一张</string>
+
 </resources>

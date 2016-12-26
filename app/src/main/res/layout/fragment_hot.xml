@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:id="@+id/transitionsContainer"
     android:layout_height="match_parent">
 
     <android.support.v7.widget.RecyclerView
@@ -9,9 +10,10 @@
         android:layout_height="match_parent"/>
 
     <include
+        android:id="@+id/layot_image"
         layout="@layout/layout_image"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:visibility="visible"/>
-</RelativeLayout>
+        android:layout_height="90dp"
+        android:layout_gravity="bottom"
+        android:visibility="visible" />
+</FrameLayout>

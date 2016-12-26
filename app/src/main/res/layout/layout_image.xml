@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="15dp"
-    android:layout_marginRight="15dp"
+    android:layout_height="wrap_content"
     android:background="@drawable/bg_image"
     android:orientation="vertical">
 
@@ -13,11 +11,15 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="34dp">
+
         <ImageView
             android:id="@+id/layout_iv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@mipmap/bg_login"/>
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:background="@drawable/image"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,6 +33,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:background="@mipmap/ic_location"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -57,18 +60,18 @@
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textSize="13sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@mipmap/bg_button"
-                android:textSize="13sp"
-                android:layout_gravity="center_horizontal|"
-                android:text="@string/modify_save"
-                android:textColor="@color/white"
-                android:layout_marginTop="50dp"
-                android:gravity="center"/>
         </LinearLayout>
+        <TextView
+            android:id="@+id/image_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/bg_button"
+            android:textSize="13sp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:text="@string/modify_save"
+            android:textColor="@color/white"
+            android:layout_marginTop="50dp"
+            android:gravity="center"/>
     </FrameLayout>
 
 </LinearLayout>
